@@ -1,0 +1,111 @@
+@import 'variables';
+$body-bg: $BgLight;
+
+$theme-colors: (
+  "primary": $Orange,
+  "secondary": $Black,
+  "blue": $Blue
+);
+
+// Import Bootstrap and its default variables
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";
+@import '~bootstrap/scss/bootstrap.scss';
+
+//Buttons override
+.btn {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: $White;
+}
+
+.btn-outline-primary {
+    color: $Orange
+}
+
+.btn-outline-secondary {
+    color: $Black
+}
+
+.btn-outline-blue {
+    color: $Blue
+}
+
+.btn-link {
+    color: $Red;
+}
+
+.navbar {
+    padding: 1rem 0rem;
+}
+
+a {
+    color: $Red;
+}
+
+.dropdown-menu {
+    margin-top: 20px;
+    padding: 0;
+    left: -75px;
+    top: 54px;
+    border: none;
+    border-radius: 0px;
+    text-align: right;
+    font-size: 0.75rem;
+    .dropdown-item {
+        padding: 1rem;
+    }
+    .dropdown-divider {
+        margin: 0;
+    }
+}
+
+.dropdown-toggle::after {
+    vertical-align: 0.15em;
+}
+
+//form elements override
+.form-label, .form-file-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: $Black;
+}
+
+.form-control {
+    font-size: 0.75rem;
+    border: none;
+    padding: 1rem;
+    width: 300px;
+    padding: 1.5rem 1rem;
+}
+
+.form-text {
+    font-size: 0.75rem;
+    margin-top: 10px;
+}
+
+.custom-select {
+    font-size: 0.75rem;
+    color: $Black;
+    height: 3rem;
+    border: none;
+}
+
+.form-control-file {
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+    width: 250px;
+    text-overflow: ellipsis;
+}
+
+.custom-file {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: $Orange;
+}
+
+.custom-range {
+    color: $Orange;
+}

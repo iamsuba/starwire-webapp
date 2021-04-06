@@ -1,0 +1,11 @@
+@import './../variables.scss';
+
+.footer {
+    background-color: $BgRegular;
+    font-weight: 400;
+    padding: 1rem;
+    font-size: 0.75rem;
+    .right {
+        text-align: right;
+    }
+}
