@@ -1,16 +1,17 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import styles from './Inputs.module.scss'
 
 function SelectInput(props) {
+
     return(
-        <Form.Group>
+        <Form.Group className={props.lightMode ? "LightBg" : ""}>
             <Form.Label>{props.label}</Form.Label>
-            <Form.Control as="select" custom>
+            <Form.Control as="select" custom onChange={(e) => props.onChange(e.target.value)}>
                 <option value="0">select</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+                {props.options}
             </Form.Control>
+            <Form.Text>{props.text}</Form.Text>
         </Form.Group>
     )
 }

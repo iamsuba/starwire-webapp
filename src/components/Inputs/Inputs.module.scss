@@ -21,6 +21,21 @@
     }
 }
 
+.rangeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: center;
+    .inputBox {
+        border: 1px solid $GreyLight;
+        border-radius: 8px;
+        width: 70px;
+    }
+    .slider {
+        flex-grow: 1;
+        margin-left: 20px;
+    }
+}
 .rangeEndPointsContainer {
     display: flex;
     flex-direction: row;

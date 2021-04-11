@@ -74,7 +74,6 @@ a {
     font-size: 0.75rem;
     border: none;
     padding: 1rem;
-    width: 300px;
     padding: 1.5rem 1rem;
 }
 
@@ -108,4 +107,21 @@ a {
 
 .custom-range {
     color: $Orange;
+}
+
+.LightBg {
+    .form-label {
+        font-weight: 500;
+        color: $GreyDark;
+    }
+    .custom-select {
+        border: 1px solid $GreyLight;
+    }
+    .form-control {
+        border: 1px solid $GreyLight;
+    }
+    .form-text {
+        color: $GreyDark;
+        font-size: 0.75rem;
+    }
 }

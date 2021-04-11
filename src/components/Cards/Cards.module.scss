@@ -1,0 +1,166 @@
+@import './../../variables.scss';
+
+.projectOverview {
+    background-color: $White;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    height: 380px;
+    padding: 2rem 1.5rem;
+    .title {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+    .image {
+        height: 150px;
+        background-position: center;
+        background-size: cover;
+        margin-top: 15px;
+    }
+    .desc {
+        font-size: 0.75rem;
+        margin-top: 10px;
+        font-weight: 400;
+        color: $GreyDark;
+        line-height: 1rem;
+        max-height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+        .status {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+            .label {
+                font-size: 0.75rem;
+                color: $GreyDark;
+                font-weight: 400;
+            }
+            .value {
+                font-size: 0.75rem;
+                color: $Black;
+                font-weight: 600;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.stakeholder {
+    height: 54px;
+    background-color: $White;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .profilePicture {
+        height: 36px;
+        width: 36px;
+        background-size: cover;
+    }
+    .infoContainer {
+        margin-left: 10px;
+        .name {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .role {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: $Orange;
+        }
+    }
+}
+
+.tier {
+    background-color: $White;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    min-height: 500px;
+    width: 100%;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    .leftContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-right: 1px solid $GreyLight;
+        padding-right: 40px;
+        .inputContainer {
+            .inputItem {
+                padding-top: 20px;
+            }
+        }
+    }
+    .stakeholdersContainer {
+        .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $Black;
+        }
+        .item {
+            border-bottom: 1px solid $GreyLight;
+            padding: 1rem 0rem;
+            .selectButton {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                height: 100%;
+                &:hover {
+                    cursor: pointer;
+                }
+                .text {
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: $Black;
+                    margin-left: 5px;
+                }
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+    .footer {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid $GreyLight;
+        margin: 30px 0px;
+        .revenueContainer {
+            .label {
+                font-size: 0.75rem;
+                font-weight: 500;
+                color: $GreyDark;
+            }
+            .value {
+                font-weight: 600;
+                color: $Red;
+                font-size: 1.5rem;
+            }
+        }
+        .footnote {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            .message {
+                margin-bottom: 10px;
+                text-align: right;
+                font-size: 0.85rem;
+                color: $GreyDark;
+                font-weight: 400;
+            }
+        }
+    }
+}
