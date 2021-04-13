@@ -12,10 +12,12 @@ import ProjectOverviewImage from './assets/images/projects/intothewild.png'
 import StakeholderCard from './components/Cards/StakeholderCard';
 import StakeholderImage from './assets/images/stakeholders/johndoe.png'
 import TierCard from './components/Cards/TierCard';
+import TierStatusCard from './components/Cards/TierStatusCard';
 import JohndoeImage from './assets/images/stakeholders/johndoe.png'
 import EmileImage from './assets/images/stakeholders/emile.png'
 import CatherineImage from './assets/images/stakeholders/catherine.png'
 import VinceImage from './assets/images/stakeholders/vince.png'
+import TotalStakeholdersRevenueCard from './components/Cards/TotalStakeholdersRevenueCard'
 
 function Library() {
 
@@ -44,6 +46,42 @@ function Library() {
             "profilePicture": CatherineImage,
             "active": false,
             "share": 0
+        },
+        {
+            "id": 4,
+            "name": "Vince Vaughn",
+            "role": "Investor",
+            "profilePicture": VinceImage,
+            "active": false,
+            "share": 0
+        }
+    ]
+
+    const stakeholdersRevenueData = 
+    [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "role": "Owner",
+            "profilePicture": JohndoeImage,
+            "active": true,
+            "share": 25
+        },
+        {
+            "id": 2,
+            "name": "Emile Hirsch",
+            "role": "Distributor",
+            "profilePicture": EmileImage,
+            "active": true,
+            "share": 35
+        },
+        {
+            "id": 3,
+            "name": "Catherine Keener",
+            "role": "Investor",
+            "profilePicture": CatherineImage,
+            "active": true,
+            "share": 40
         },
         {
             "id": 4,
@@ -156,6 +194,34 @@ function Library() {
                     <Row>
                         <Col md={12}>
                             <TierCard stakeholdersData={stakeholdersData} />
+                        </Col>
+                    </Row>
+                </div>
+                <div className={styles.mrTop}>
+                    <Row>
+                        <Col md={12}>
+                            <TierStatusCard stakeholdersData={stakeholdersData} status="completed" />
+                        </Col>
+                    </Row>
+                </div>
+                <div className={styles.mrTop}>
+                    <Row>
+                        <Col md={12}>
+                            <TierStatusCard stakeholdersData={stakeholdersData} status="active" />
+                        </Col>
+                    </Row>
+                </div>
+                <div className={styles.mrTop}>
+                    <Row>
+                        <Col md={12}>
+                            <TierStatusCard stakeholdersData={stakeholdersData} status="pending" />
+                        </Col>
+                    </Row>
+                </div>
+                <div className={styles.mrTop}>
+                    <Row>
+                        <Col md={12}>
+                            <TotalStakeholdersRevenueCard stakeholdersData={stakeholdersRevenueData} />
                         </Col>
                     </Row>
                 </div>

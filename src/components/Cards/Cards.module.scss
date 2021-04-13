@@ -84,6 +84,16 @@
 }
 
 .tier {
+    &.active {
+        border: 1px solid $Orange;
+    }
+
+    .headerContainer {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
     background-color: $White;
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
@@ -97,9 +107,56 @@
         align-items: flex-start;
         border-right: 1px solid $GreyLight;
         padding-right: 40px;
+
+        .chartContainer {
+            .labelsContainer {
+                margin-top: 2rem;
+                .labelItemContainer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .color {
+                        background: $Grey;
+                        height: 0.75rem;
+                        width: 0.75rem;
+                    }
+                    .name {
+                        margin-left: 10px;
+                        font-size: 0.75rem;
+                        color: $GreyDark;
+                    }
+                }
+            }
+        }
         .inputContainer {
             .inputItem {
                 padding-top: 20px;
+            }
+        }
+        .titleContainer {
+            .status {
+                color: $Black;
+                font-size: 0.75rem;
+                font-weight: 400;
+                .value {
+                    color: $Red;
+                }
+            }
+        }
+        .dataContainer {
+            .revenueContainer {
+                margin: 1.5rem 0rem;
+                .label {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: $GreyDark;
+                }
+                .value {
+                    font-size: 1.75rem;
+                    color: $Red;
+                    font-weight: 500;
+                }
             }
         }
     }
@@ -126,6 +183,32 @@
                     font-weight: 600;
                     color: $Black;
                     margin-left: 5px;
+                }
+            }
+            .shareContainer {
+                text-align: right;
+                .label {
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    color: $GreyDark;
+                }
+                .value {
+                    font-size: 1.25rem;
+                    color: $Blue;
+                    font-weight: 600;
+                }
+            }
+            .revenueContainer {
+                text-align: right;
+                .label {
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    color: $GreyDark;
+                }
+                .value {
+                    font-size: 1.25rem;
+                    color: $Red;
+                    font-weight: 600;
                 }
             }
             &:last-child {
