@@ -24,7 +24,7 @@ function Header(props) {
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="ml-auto">
                                     <Form inline>
-                                        <FormControl className={styles.search} type="text" placeholder="Search" />
+                                        <FormControl className={styles.search} type="text" placeholder="Search" onChange={(e) => props.handleSearch(e.target.value)} />
                                     </Form>
                                     <div className={styles.profile}>
                                         <img

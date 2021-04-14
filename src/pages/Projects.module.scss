@@ -1,0 +1,47 @@
+@import '../variables.scss';
+
+.projectsPage {
+    .projectsHeader {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        .titleContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            .title {
+                font-size: 1.75rem;
+                font-weight: 800;
+                margin-right: 1rem;
+            }
+        }
+        .filtersContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            .item {
+                font-size: 0.85rem;
+                color: $Grey;
+                margin-left: 20px;
+                &:hover {
+                    cursor: pointer;
+                    color: $Orange;
+                }
+                &.active {
+                    color: $Red;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .projectsContainer {
+        padding: 2rem 0rem;
+        .projectItem {
+            margin-top: 2rem;
+        }
+    }
+}

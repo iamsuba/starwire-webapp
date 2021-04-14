@@ -4,10 +4,13 @@ import ArrowIcon from './../../assets/images/arrow.svg'
 import { Image } from 'react-bootstrap'
 
 function ProjectOverviewCard(props) {
+
+    const projectPoster = require('../../assets/images/projects/'+props.image)
+
     return(
-        <div className={styles.projectOverview}>
+        <div className={props.status == "Finished" ? `${styles.projectOverview} ${styles.finished}` : styles.projectOverview}>
             <div className={styles.title}>{props.title}</div>
-            <div className={styles.image} style={{backgroundImage: 'url('+props.image+')'}}></div>
+            <div className={props.status == "Finished" ? styles.imageFinished : styles.image} style={{backgroundImage: 'url('+projectPoster.default+')'}}></div>
             <div className={styles.desc}>{props.desc}</div>
             <div className={styles.footer}>
                 <div className={styles.status}>
