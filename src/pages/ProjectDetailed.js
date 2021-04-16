@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import styles from './ProjectDetailed.module.scss'
 import Header from '../components/Header'
 import ButtonElement from '../components/ButtonElement'
 import Footer from '../components/Footer'
 import StakeholderCard from '../components/Cards/StakeholderCard'
-//import StakeholderImage from '../assets/images/stakeholders/johndoe.png'
+import ContractIcon from '../assets/images/contract.svg'
 
 function ProjectDetailed(props) {
 
@@ -25,26 +25,36 @@ function ProjectDetailed(props) {
     return(
         <div className={styles.projectDetailedPage}>
             <Header search={false} />
-            <Container className={styles.projectDetailedContainer}>
-                <Row>
-                    <Col md={4}>
-                        <div className={styles.image} style={{backgroundImage: 'url('+projectPoster.default+')'}}></div>
-                    </Col>
-                    <Col md={8}>
-                        <div className={styles.title}>{projectData.name}</div>
-                        <div className={styles.statusContainer}>
-                            <div className={styles.label}>STATUS</div>
-                            <div className={styles.value}>{projectData.status}</div>
-                        </div>
-                        <div className={styles.desc}>{projectData.desc}</div>
-                        <div className={styles.stakeholders}>
-                            <div className={styles.title}>Stakeholders</div>
-                            <Row>
-                                {StakeholderList}
-                            </Row>
-                        </div>
-                    </Col>
-                </Row>
+            <Container>
+                <div className={styles.projectDetailedContainer}>
+                    <Row>
+                        <Col md={4}>
+                            <div className={styles.image} style={{backgroundImage: 'url('+projectPoster.default+')'}}></div>
+                        </Col>
+                        <Col md={8}>
+                            <div className={styles.title}>{projectData.name}</div>
+                            <div className={styles.statusContainer}>
+                                <div className={styles.label}>STATUS</div>
+                                <div className={styles.value}>{projectData.status}</div>
+                            </div>
+                            <div className={styles.desc}>{projectData.desc}</div>
+                            <div className={styles.stakeholders}>
+                                <div className={styles.title}>Stakeholders</div>
+                                <Row>
+                                    {StakeholderList}
+                                </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+                <div className={styles.contractContainer}>
+                    <div className={styles.emptyMessageContainer}>
+                        <Image src={ContractIcon} height="96px" width="96px" />
+                        <div className={styles.title}>Create Financial Contract</div>
+                        <div className={styles.desc}>Use the smart contract builder to create tiers, configure payment distribution, publish to the blockchain and track it.</div>
+                        <ButtonElement variant="primary" label="Create" onClick={() => alert('button called')} />
+                    </div>
+                </div>
             </Container>
             <Footer />
         </div>
