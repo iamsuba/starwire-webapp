@@ -7,6 +7,7 @@ import Config from './config.js'
 import ProjectDetailed from './pages/ProjectDetailed';
 
 function App() {
+
   return (
     <BrowserRouter className={styles.app}>
       <Switch>
@@ -17,7 +18,7 @@ function App() {
           <Projects data={Config.projects} />
         </Route>
         <Route exact path="/projectDetailed">
-          <ProjectDetailed data={Config.projects} />
+          <ProjectDetailed data={Config.projects[0]} />
         </Route>
       </Switch>
     </BrowserRouter>

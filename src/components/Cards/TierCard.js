@@ -16,7 +16,7 @@ function TierCard(props) {
 
     const getStakeholdersOptions = stakeholdersList.map(stakeholder => {
         return (
-            <option value={stakeholder.id}>{stakeholder.name}</option>
+            <option value={stakeholder.id}>{stakeholder.firstName + '_' + stakeholder.lastName}</option>
         )
     })
 
@@ -62,17 +62,19 @@ function TierCard(props) {
         if(primaryStakeholder == undefined || primaryStakeholder.share == 0 || primaryStakeholder.targetRevenue == 0 || primaryStakeholder.targetRevenue == undefined) {
             setTargetTierRevenue(0)
         } else {
-            setTargetTierRevenue(((primaryStakeholder.targetRevenue * 100) / primaryStakeholder.share).toFixed(2))
+            const targetBeforeTax = parseFloat(((primaryStakeholder.targetRevenue * 100) / primaryStakeholder.share).toFixed(2))
+            setTargetTierRevenue(targetBeforeTax + (targetBeforeTax * 0.03))
         }
     }
 
 
     let Stakeholders = stakeholdersList.map((stakeholder) => {
-        console.log("mapping")
+        
+        const StakeholderImage = require('../../assets/images/stakeholders/'+stakeholder.profilePicture).default
         return(
             <Row className={styles.item} key={stakeholder.id}>
                 <Col md={4}>
-                    <StakeholderCard name={stakeholder.name} role={stakeholder.role} profilePicture={stakeholder.profilePicture} />    
+                    <StakeholderCard name={stakeholder.firstName + ' ' + stakeholder.lastName} role={stakeholder.role} profilePicture={StakeholderImage} />    
                 </Col>
                 <Col md={8}>
                     {

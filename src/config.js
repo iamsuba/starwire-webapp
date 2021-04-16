@@ -7,28 +7,40 @@ const projects = [
             "poster": "intothewild.png",
             "stakeholders": [
                 {
+                    "id": 1,
                     "firstName": "John",
                     "lastName": "Doe",
                     "role": "owner",
-                    "picture": "john.png"
+                    "profilePicture": "john.png",
+                    "active": false,
+                    "share": 0
                 },
                 {
+                    "id": 2,
                     "firstName": "Emile",
                     "lastName": "Hirsch",
                     "role": "distributor",
-                    "picture": "emile.png"
+                    "profilePicture": "emile.png",
+                    "active": false,
+                    "share": 0
                 },
                 {
+                    "id": 3,
                     "firstName": "Catherine",
                     "lastName": "Keener",
                     "role": "Investor",
-                    "picture": "catherine.png"
+                    "profilePicture": "catherine.png",
+                    "active": false,
+                    "share": 0
                 },
                 {
+                    "id": 4,
                     "firstName": "Vince",
                     "lastName": "Vaughn",
                     "role": "Crew",
-                    "picture": "vince.png"
+                    "profilePicture": "vince.png",
+                    "active": false,
+                    "share": 0
                 }
             ]
             

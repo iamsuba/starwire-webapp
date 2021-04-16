@@ -24,33 +24,37 @@ function Library() {
     [
         {
             "id": 1,
-            "name": "John Doe",
+            "firstName": "John",
+            "lastName": "Doe",
             "role": "Owner",
-            "profilePicture": JohndoeImage,
+            "profilePicture": "john.png",
             "active": false,
             "share": 0
         },
         {
             "id": 2,
-            "name": "Emile Hirsch",
+            "firstName": "Emile",
+            "lastName": "Hirsch",
             "role": "Distributor",
-            "profilePicture": EmileImage,
+            "profilePicture": "emile.png",
             "active": false,
             "share": 0
         },
         {
             "id": 3,
-            "name": "Catherine Keener",
+            "firstName": "Catherine",
+            "lastName": "Keener",
             "role": "Investor",
-            "profilePicture": CatherineImage,
+            "profilePicture": "catherine.png",
             "active": false,
             "share": 0
         },
         {
             "id": 4,
-            "name": "Vince Vaughn",
+            "firstName": "Vince",
+            "lastName": "Vaughn",
             "role": "Investor",
-            "profilePicture": VinceImage,
+            "profilePicture": "vince.png",
             "active": false,
             "share": 0
         }
@@ -60,33 +64,37 @@ function Library() {
     [
         {
             "id": 1,
-            "name": "John Doe",
+            "firstName": "John",
+            "lastName": "Doe",
             "role": "Owner",
-            "profilePicture": JohndoeImage,
+            "profilePicture": "john.png",
             "active": true,
             "share": 25
         },
         {
             "id": 2,
-            "name": "Emile Hirsch",
+            "firstName": "Emile",
+            "lastName": "Hirsch",
             "role": "Distributor",
-            "profilePicture": EmileImage,
+            "profilePicture": "emile.png",
             "active": true,
             "share": 35
         },
         {
             "id": 3,
-            "name": "Catherine Keener",
+            "firstName": "Catherine",
+            "lastName": "Keener",
             "role": "Investor",
-            "profilePicture": CatherineImage,
+            "profilePicture": "catherine.png",
             "active": true,
             "share": 40
         },
         {
             "id": 4,
-            "name": "Vince Vaughn",
+            "firstName": "Vince",
+            "lastName": "Vaughn",
             "role": "Investor",
-            "profilePicture": VinceImage,
+            "profilePicture": "vince.png",
             "active": false,
             "share": 0
         }

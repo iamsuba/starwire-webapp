@@ -8,18 +8,12 @@ function TierStatusCard(props) {
 
     const [stakeholdersList, setStakeholdersList] = useState(props.stakeholdersData)
 
-    const getStakeholdersOptions = stakeholdersList.map(stakeholder => {
-        return (
-            <option value={stakeholder.id}>{stakeholder.name}</option>
-        )
-    })
-
     let Stakeholders = stakeholdersList.map((stakeholder) => {
-        console.log("mapping")
+        const StakeholderImage = require('../../assets/images/stakeholders/'+stakeholder.profilePicture).default
         return(
             <Row className={styles.item} key={stakeholder.id}>
                 <Col md={4}>
-                    <StakeholderCard name={stakeholder.name} role={stakeholder.role} profilePicture={stakeholder.profilePicture} />    
+                    <StakeholderCard name={stakeholder.name} role={stakeholder.role} profilePicture={StakeholderImage} />    
                 </Col>
                 <Col md={2}>
                     <div className={styles.shareContainer}>

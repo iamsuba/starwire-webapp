@@ -16,10 +16,12 @@ $theme-colors: (
     font-size: 0.75rem;
     font-weight: 500;
     color: $White;
+    height: 55px;
+    padding: 5px 30px;
 }
 
 .btn-outline-primary {
-    color: $Orange
+    color: $Orange;
 }
 
 .btn-outline-secondary {
