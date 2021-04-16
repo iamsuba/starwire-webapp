@@ -6,7 +6,7 @@ import StakeholderCard from './StakeholderCard';
 function TierStatusCard(props) {
     
 
-    const [stakeholdersList, setStakeholdersList] = useState(props.stakeholdersData)
+    const [stakeholdersList, setStakeholdersList] = useState(props.data.stakeholders)
 
     let Stakeholders = stakeholdersList.map((stakeholder) => {
         const StakeholderImage = require('../../assets/images/stakeholders/'+stakeholder.profilePicture).default
@@ -18,19 +18,19 @@ function TierStatusCard(props) {
                 <Col md={2}>
                     <div className={styles.shareContainer}>
                         <div className={styles.label}>Share</div>
-                        <div className={styles.value}>46%</div>
+                        <div className={styles.value}>{stakeholder.share}%</div>
                     </div>
                 </Col>
                 <Col md={3}>
                     <div className={styles.revenueContainer}>
                         <div className={styles.label}>Target Reveue</div>
-                        <div className={styles.value}>$250,000</div>
+                        <div className={styles.value}>${stakeholder.targetRevenue}</div>
                     </div>
                 </Col>
                 <Col md={3}>
                     <div className={styles.revenueContainer}>
                         <div className={styles.label}>Revenue Received</div>
-                        <div className={styles.value}>$0</div>
+                        <div className={styles.value}>${stakeholder.receivedRevenue}</div>
                     </div>
                 </Col>
             </Row>
@@ -40,24 +40,24 @@ function TierStatusCard(props) {
 
     return(
         <div className={
-                props.status=="active" ? `${styles.tier} ${styles.active}` : 
-                props.status=="completed" ? `${styles.tier} ${styles.completed}` : 
+                props.data.status=="active" ? `${styles.tier} ${styles.active}` : 
+                props.data.status=="completed" ? `${styles.tier} ${styles.completed}` : 
                 styles.tier
             }>
             <Row>
                 <Col md={3} className={styles.leftContainer}>
                     <div className={styles.titleContainer}>
-                        <div className={styles.title}>Tier I</div>
+                        <div className={styles.title}>{props.data.name}</div>
                         <div className={styles.status}>Status <span className={styles.value}>{props.status}</span></div>
                     </div>
                     <div className={styles.dataContainer}>
                         <div className={styles.revenueContainer}>
                             <div className={styles.label}>Target Revenue</div>
-                            <div className={styles.value}>$0</div>
+                            <div className={styles.value}>${props.data.targetRevenue}</div>
                         </div>
                         <div className={styles.revenueContainer}>
                             <div className={styles.label}>Revenue Generated</div>
-                            <div className={styles.value}>$0</div>
+                            <div className={styles.value}>${props.data.receivedRevenue}</div>
                         </div>
                     </div>
                 </Col>

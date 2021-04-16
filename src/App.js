@@ -20,6 +20,9 @@ function App() {
         <Route exact path="/projectDetailed">
           <ProjectDetailed data={Config.projects[0]} />
         </Route>
+        <Route exact path="/projectDetailedActive">
+          <ProjectDetailed data={Config.projects[1]} />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

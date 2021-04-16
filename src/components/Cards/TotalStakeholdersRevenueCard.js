@@ -6,11 +6,8 @@ import { PieChart } from 'react-minimal-pie-chart';
 import DistinctColors from 'distinct-colors'
 
 function TotalStakeholdersRevenueCard(props) {
-    
-    const totalTierTargetRevenue = 500000
-    const totalTierReceivedRevenue = 350000
 
-    const [stakeholdersList, setStakeholdersList] = useState(props.stakeholdersData)
+    const [stakeholdersList, setStakeholdersList] = useState(props.data.stakeholders)
     const [chartLoading, setChartLoading] = useState(true)
     const [chartData, setChartData] = useState([])
 
@@ -45,17 +42,12 @@ function TotalStakeholdersRevenueCard(props) {
     useEffect(() => {
 
         const newStakeholdersList = [...stakeholdersList]
-        
-        newStakeholdersList.map(stakeholder => {
-            stakeholder.totalTargetRevenue = ((stakeholder.share/100)*totalTierTargetRevenue).toFixed(2)
-            stakeholder.totalReveiedRevenue = ((stakeholder.share/100)*totalTierReceivedRevenue).toFixed(2)
-        })
 
         const newChartData = newStakeholdersList.map((stakeholder, i) => {
             return({
-                color:colorPaletteHex[i],
-                title:stakeholder.name,
-                value:stakeholder.share,
+                color: colorPaletteHex[i],
+                title: stakeholder.firstName + ' ' + stakeholder.lastName,
+                value: stakeholder.share,
             })
         })
 
@@ -76,11 +68,11 @@ function TotalStakeholdersRevenueCard(props) {
     })
 
     let Stakeholders = stakeholdersList.filter(stakeholder => stakeholder.share > 0).map((stakeholder) => {
-        console.log("mapping")
+        const StakeholderImage = require('../../assets/images/stakeholders/'+stakeholder.profilePicture).default
         return(
             <Row className={styles.item} key={stakeholder.id}>
                 <Col md={4}>
-                    <StakeholderCard name={stakeholder.name} role={stakeholder.role} profilePicture={stakeholder.profilePicture} />    
+                    <StakeholderCard name={stakeholder.firstName + ' ' + stakeholder.lastName} role={stakeholder.role} profilePicture={StakeholderImage} />    
                 </Col>
                 <Col md={2}>
                     <div className={styles.shareContainer}>
@@ -97,7 +89,7 @@ function TotalStakeholdersRevenueCard(props) {
                 <Col md={3}>
                     <div className={styles.revenueContainer}>
                         <div className={styles.label}>Revenue Received</div>
-                        <div className={styles.value}>${stakeholder.totalReveiedRevenue}</div>
+                        <div className={styles.value}>${stakeholder.totalReceivedRevenue}</div>
                     </div>
                 </Col>
             </Row>

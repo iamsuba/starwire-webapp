@@ -54,31 +54,36 @@
     }
     .contractContainer {
         padding: 2rem 0rem;
-        .contractBuilder {
-            .menu {
-                margin-bottom: 2rem;
-                .titleContainer {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: center;
-                    margin-bottom: 25px;
-                    .title {
-                        font-size: 1.25rem;
-                        font-weight: 500;
-                        margin-left: 10px;
-                    }
-                }
-                .buttonsContainer {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: flex-end;
-                    align-items: center;
-                    .item {
-                        margin-left: 10px;
-                    }
+        .menu {
+            margin-bottom: 2rem;
+            .titleContainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 25px;
+                .title {
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    margin-left: 10px;
                 }
             }
+            .buttonsContainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                .item {
+                    margin-left: 10px;
+                }
+            }
+        }
+        .contracts {
+            .item {
+                margin-bottom: 25px;
+            }
+        }
+        .contractBuilder {
             .tiersContainer {
                 .item {
                     margin-bottom: 20px;

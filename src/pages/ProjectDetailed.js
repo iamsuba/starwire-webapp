@@ -7,12 +7,14 @@ import Footer from '../components/Footer'
 import StakeholderCard from '../components/Cards/StakeholderCard'
 import ContractIcon from '../assets/images/contract.svg'
 import TierCard from '../components/Cards/TierCard'
+import TotalStakeholdersRevenueCard from '../components/Cards/TotalStakeholdersRevenueCard';
+import TierStatusCard from '../components/Cards/TierStatusCard';
 
 function ProjectDetailed(props) {
 
+    const projectData = props.data
     const [showContractBuilder, setShowContractBuilder] = useState(false)
 
-    const projectData = props.data
     const projectPoster = require('../assets/images/projects/'+projectData.poster).default
 
     const createContract = () => {
@@ -60,6 +62,39 @@ function ProjectDetailed(props) {
             </div>
         </div>
 
+    const TierStatus = projectData.tiers.map(tier => {
+        return (
+            <div className={styles.item}>
+                <TierStatusCard data={tier} />
+            </div>
+        )
+    })
+
+    const Contracts = 
+        <div className={styles.contracts}>
+            <Row className={styles.menu}>
+                <Col md={6} className={styles.titleContainer}>
+                    <img src={ContractIcon} width="48px" />
+                    <div className={styles.title}>Financial Contract Builder</div>
+                </Col>
+                <Col md={6} className={styles.buttonsContainer}>
+                <div className={styles.item}>
+                        <ButtonElement variant="blue" label="Simulate" onClick={() => alert("saving")} />
+                    </div>
+                    <div className={styles.item}>
+                        <ButtonElement variant="secondary" label="Edit" onClick={() => createContract()} />
+                    </div>
+                    <div className={styles.item}>
+                        <ButtonElement variant="primary" label="Publish to Blockchain" onClick={() => alert("saving")} />
+                    </div>
+                </Col>
+            </Row>
+            <div className={styles.item}>
+                <TotalStakeholdersRevenueCard data={props.data} />
+            </div>
+            {TierStatus}
+        </div>
+
     return(
         <div className={styles.projectDetailedPage}>
             <Header search={false} />
@@ -90,6 +125,7 @@ function ProjectDetailed(props) {
                 </div>
                 <div className={styles.contractContainer}>
                     {
+                        projectData.status == "Generating Revenue" ? Contracts :
                         showContractBuilder ? ContractBuilder : ContractBuilderEmptyMessage
                     }
                 </div>
