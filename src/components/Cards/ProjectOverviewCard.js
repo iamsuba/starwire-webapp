@@ -8,7 +8,7 @@ function ProjectOverviewCard(props) {
     const projectPoster = require('../../assets/images/projects/'+props.image)
 
     return(
-        <div className={props.status == "Finished" ? `${styles.projectOverview} ${styles.finished}` : styles.projectOverview}>
+        <div href="/library" className={props.status == "Finished" ? `${styles.projectOverview} ${styles.finished}` : styles.projectOverview}>
             <div className={styles.title}>{props.title}</div>
             <div className={props.status == "Finished" ? styles.imageFinished : styles.image} style={{backgroundImage: 'url('+projectPoster.default+')'}}></div>
             <div className={styles.desc}>{props.desc}</div>

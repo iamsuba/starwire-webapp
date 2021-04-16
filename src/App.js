@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, useRouteMatch } from 'react-router-dom'
 import Library from './Library'
 import Projects from './pages/Projects'
 import Config from './config.js'
+import ProjectDetailed from './pages/ProjectDetailed';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route exact path="/projects">
           <Projects data={Config.projects} />
+        </Route>
+        <Route exact path="/projectDetailed">
+          <ProjectDetailed data={Config.projects} />
         </Route>
       </Switch>
     </BrowserRouter>

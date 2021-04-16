@@ -1,0 +1,54 @@
+@import '../variables.scss';
+
+.projectDetailedPage {
+    .projectDetailedContainer {
+        padding: 3rem 0rem;
+        .image {
+            background-position: center;
+            background-size: cover;
+            height: 400px;
+        }
+        .title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: $Black;
+        }
+        .statusContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin-top: 5px;
+            .label {
+                color: $GreyDark;
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+            .value {
+                color: $Red;
+                font-size: 0.85rem;
+                font-weight: 700;
+                margin-left: 5px;
+            }
+        }
+        .desc {
+            font-size: 0.85rem;
+            color: $GreyDark;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+        .stakeholders {
+            margin-top: 25px;
+            .title {
+                font-size: 1rem;
+                font-weight: 700;
+                color: $Black;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .stakeholderItemContainer {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

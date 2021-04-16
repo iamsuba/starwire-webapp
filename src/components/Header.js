@@ -23,9 +23,12 @@ function Header(props) {
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="ml-auto">
-                                    <Form inline>
-                                        <FormControl className={styles.search} type="text" placeholder="Search" onChange={(e) => props.handleSearch(e.target.value)} />
-                                    </Form>
+                                    {
+                                        props.search ? 
+                                        <Form inline>
+                                            <FormControl className={styles.search} type="text" placeholder="Search" onChange={(e) => props.handleSearch(e.target.value)} />
+                                        </Form> : ""
+                                    }
                                     <div className={styles.profile}>
                                         <img
                                             src={ProfilePhoto}

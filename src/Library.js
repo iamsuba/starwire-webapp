@@ -8,7 +8,6 @@ import SelectInput from './components/Inputs/SelectInput'
 import ImageUploadInput from './components/Inputs/ImageUploadInput'
 import RangeInput from './components/Inputs/RangeInput'
 import ProjectOverviewCard from './components/Cards/ProjectOverviewCard'
-import ProjectOverviewImage from './assets/images/projects/intothewild.png'
 import StakeholderCard from './components/Cards/StakeholderCard';
 import StakeholderImage from './assets/images/stakeholders/johndoe.png'
 import TierCard from './components/Cards/TierCard';
@@ -173,7 +172,7 @@ function Library() {
                                 title="Into the Wild"
                                 desc="After graduating from Emory University, top student and athlete Christopher McCandless abandons his possessions, gives his entire $24,000 savings account to charity and hitchhikes to Alaska to live in the wilderness. Along the way, Christopher encounters a series of characters that shape his life."
                                 status="Pre-Revenue"
-                                image={ProjectOverviewImage} />
+                                image="intothewild.png" />
                         </Col>
                     </Row>
                 </div>

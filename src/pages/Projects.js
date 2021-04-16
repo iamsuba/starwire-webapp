@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import ButtonElement from '../components/ButtonElement'
 import ProjectOverviewCard from '../components/Cards/ProjectOverviewCard'
 import Footer from '../components/Footer'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 function Projects(props) {
 
@@ -12,12 +13,19 @@ function Projects(props) {
 
     const Project = projectsData.map(project => {
         return(
-            <Col xl={4} lg={3} className={styles.projectItem}>
-                <ProjectOverviewCard 
-                        title={project.name}
-                        desc={project.desc}
-                        status={project.status}
-                        image={project.poster} />
+            <Col md={4} className={styles.projectItem}>
+                <Link 
+                    style={{ textDecoration: 'none' }} 
+                    to={{
+                        pathname: "/projectDetailed",
+                        search: "?id="+project.id
+                      }}>
+                    <ProjectOverviewCard 
+                            title={project.name}
+                            desc={project.desc}
+                            status={project.status}
+                            image={project.poster} />
+                </Link>
             </Col>
         )
     })
@@ -34,7 +42,7 @@ function Projects(props) {
 
     return(
         <div className={styles.projectsPage}>
-            <Header handleSearch={(v) => handleSearch(v)} />
+            <Header search={true} handleSearch={(v) => handleSearch(v)} />
             <Container>
                 <div className={styles.projectsHeader}>
                     <div className={styles.titleContainer}>
