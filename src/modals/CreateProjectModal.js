@@ -6,8 +6,39 @@ import TextInput from '../components/Inputs/TextInput';
 import TextAreaInput from '../components/Inputs/TextAreaInput'
 import ButtonElement from '../components/ButtonElement'
 import ImageUploadInput from '../components/Inputs/ImageUploadInput'
+import ProjectCreatedIcon from '../assets/images/project_created.svg'
 
 function CreateProjectModal(props) {
+
+    const [projectCreated, setProjectCreated] = useState(false)
+
+    const hideModal = () => {
+        setProjectCreated(false)
+        props.onHide()
+    }
+
+    const CreateProjectForm = 
+        <Row>
+            <Col md={6}>
+                <div className={styles.label}>Project Poster</div>
+                <ImageUploadInput />
+            </Col>
+            <Col md={6}>
+                <div className={styles.item}>
+                    <TextInput type="text" label="Title" placeholder="eg: Into the wild" />
+                </div>
+                <div className={styles.item}>
+                    <TextAreaInput type="desc" label="Email Address" placeholder="eg: johndoe@mail.com" />
+                </div>
+            </Col>
+        </Row>
+
+    const ProjectCreatedMessage = 
+        <div className={styles.createdMessage}>
+            <Image src={ProjectCreatedIcon} height="96px" width="96px" />
+            <div className={styles.msg}>Successfully created the project "Into the wild"</div>
+        </div>
+
     return(
         <Modal
             className={styles.modalContainer}
@@ -21,24 +52,13 @@ function CreateProjectModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Row>
-                    <Col md={6}>
-                        <div className={styles.label}>Project Poster</div>
-                        <ImageUploadInput />
-                    </Col>
-                    <Col md={6}>
-                        <div className={styles.item}>
-                            <TextInput type="text" label="Title" placeholder="eg: Into the wild" />
-                        </div>
-                        <div className={styles.item}>
-                            <TextAreaInput type="desc" label="Email Address" placeholder="eg: johndoe@mail.com" />
-                        </div>
-                    </Col>
-                </Row>
+                { projectCreated ? ProjectCreatedMessage : CreateProjectForm }
             </Modal.Body>
             <Modal.Footer>
-                <ButtonElement variant="primary" label="Create" onClick={() => alert('button called')} />
-                <ButtonElement variant="secondary" label="Close" onClick={props.onHide} />
+                {
+                    !projectCreated ? <ButtonElement variant="primary" label="Create" onClick={() => setProjectCreated(true)} /> : ""
+                }
+                <ButtonElement variant="secondary" label="Close" onClick={hideModal} />
             </Modal.Footer>
         </Modal>
     )

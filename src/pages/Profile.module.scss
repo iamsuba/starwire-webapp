@@ -71,6 +71,15 @@
             }
         }
     }
+    .requests {
+        padding-top: 4rem;
+        .header {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $Black;
+            margin-bottom: 20px;
+        }
+    }
     .requestContainer {
         border-radius: 8px;
         padding: 1.5rem;
@@ -78,9 +87,11 @@
         flex-direction: column;
         justify-content: space-between;
         margin-top: 10px;
+        border-bottom: 1px solid $BgRegular;
         &.pending {
             background-color: $White;
             box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
+            border-bottom: none;
         }
         &:hover {
             cursor: pointer;

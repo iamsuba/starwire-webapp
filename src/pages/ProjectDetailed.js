@@ -10,11 +10,13 @@ import TierCard from '../components/Cards/TierCard'
 import TotalStakeholdersRevenueCard from '../components/Cards/TotalStakeholdersRevenueCard';
 import TierStatusCard from '../components/Cards/TierStatusCard';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
+import InviteStakeholderModal from '../modals/InviteStakeholderModal';
 
 function ProjectDetailed(props) {
 
     const projectData = props.location.state.projectData
     const [showContractBuilder, setShowContractBuilder] = useState(false)
+    const [showInviteStakeholderModal, setShowInviteStakeholderModal]  = useState(false)
 
     const projectPoster = require('../assets/images/projects/'+projectData.poster).default
 
@@ -144,7 +146,7 @@ function ProjectDetailed(props) {
                                 <Row>
                                     {StakeholderList}
                                     <Col md={4} className={styles.stakeholderItemContainer}>
-                                        <ButtonElement variant="outline-primary" label="Add a Stakeholder" onClick={() => alert('button called')} block={true} />
+                                        <ButtonElement variant="outline-primary" label="Add a Stakeholder" onClick={() => setShowInviteStakeholderModal(true)} block={true} />
                                     </Col>
                                 </Row>
                             </div>
@@ -159,6 +161,8 @@ function ProjectDetailed(props) {
                 </div>
             </Container>
             <Footer />
+
+            <InviteStakeholderModal show={showInviteStakeholderModal} onHide={() => setShowInviteStakeholderModal(false)} />
         </div>
     )
 }

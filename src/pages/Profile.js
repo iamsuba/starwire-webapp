@@ -9,13 +9,21 @@ import AccountIcon from '../assets/images/account.svg'
 import SecurityIcon from '../assets/images/security.svg'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import Config from '../config'
+import BlockchainWalletModal from '../modals/BlockchainWalletModal'
+import AccountSettingsModal from '../modals/AccountSettingsModal'
+import ChangePasswordModal from '../modals/ChangePasswordModal'
 
 function Profile(props) {
-    
-    const profilePicture = require('../assets/images/stakeholders/john.png').default
+
 
     const projectRequests = Config.requests
     const projects = Config.projects
+
+    const [showBlockchainWalletModal, setShowBlockchainWalletModal] = useState(false)
+    const [showAccountSettingsModal, setShowAccountSettingsModal] = useState(false)
+    const [showChangePasswordModal, setShowChangePasswordModal] = useState(false)
+
+    const profilePicture = require('../assets/images/stakeholders/john.png').default
 
     const Requests = projectRequests.map(request => {
         const projectData = projects[request.projectId]
@@ -49,7 +57,7 @@ function Profile(props) {
                 </div>
                 <Row className={styles.tilesContainer}>
                     <Col md={6} className={styles.itemContainer}>
-                        <div className={styles.tile}>
+                        <div className={styles.tile} onClick={() => setShowBlockchainWalletModal(true)}>
                             <div className={styles.topRow}>
                                 <div className={styles.label}>Starwire Token Balance</div>
                                 <div className={styles.value}>1788.54 STR</div>
@@ -66,7 +74,7 @@ function Profile(props) {
                         </div>
                     </Col>
                     <Col md={3} className={styles.itemContainer}>
-                        <div className={styles.tile}>
+                        <div className={styles.tile} onClick={() => setShowAccountSettingsModal(true)}>
                             <div className={styles.topRow}>
                                 <Image src={AccountIcon} width="72px" height="72px" />
                             </div>
@@ -82,7 +90,7 @@ function Profile(props) {
                         </div>
                     </Col>
                     <Col md={3} className={styles.itemContainer}>
-                        <div className={styles.tile}>
+                        <div className={styles.tile} onClick={() => setShowChangePasswordModal(true)}>
                             <div className={styles.topRow}>
                                 <Image src={SecurityIcon} width="72px" height="72px" />
                             </div>
@@ -98,12 +106,16 @@ function Profile(props) {
                         </div>
                     </Col>
                 </Row>
-                <div className={styles.requestsContainer}>
+                <div className={styles.requests}>
                     <div className={styles.header}>Project Requests</div>
                     {Requests}
                 </div>
             </Container>
             <Footer />
+
+            <BlockchainWalletModal show={showBlockchainWalletModal} onHide={() => setShowBlockchainWalletModal(false)} />
+            <AccountSettingsModal show={showAccountSettingsModal} onHide={() => setShowAccountSettingsModal(false)} />
+            <ChangePasswordModal show={showChangePasswordModal} onHide={() => setShowChangePasswordModal(false)} />
         </div>
     )
 }
