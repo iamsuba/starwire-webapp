@@ -6,10 +6,12 @@ import ButtonElement from '../components/ButtonElement'
 import ProjectOverviewCard from '../components/Cards/ProjectOverviewCard'
 import Footer from '../components/Footer'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
+import CreateProjectModal from '../modals/CreateProjectModal'
 
 function Projects(props) {
 
     const [projectsData, setProjectsData] = useState(props.data)
+    const [showCreateProject, setShowCreateProject] = useState(false)
 
     const Project = projectsData.map(project => {
         return(
@@ -48,7 +50,7 @@ function Projects(props) {
                 <div className={styles.projectsHeader}>
                     <div className={styles.titleContainer}>
                         <div className={styles.title}>Projects</div>
-                        <ButtonElement variant="primary" label="Create Project" onClick={() => alert('button called')} />
+                        <ButtonElement variant="primary" label="Create Project" onClick={() => setShowCreateProject(true)} />
                     </div>
                     <div className={styles.filtersContainer}>
                         <div className={[`${styles.item} ${styles.active}`]}>All</div>
@@ -65,6 +67,8 @@ function Projects(props) {
                 </div>
             </Container>
             <Footer />
+
+            <CreateProjectModal show={showCreateProject} onHide={() => setShowCreateProject(false)} />
         </div>
     )
 }

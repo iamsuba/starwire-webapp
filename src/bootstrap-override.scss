@@ -111,6 +111,36 @@ a {
     color: $Orange;
 }
 
+.modal-content {
+    background: rgba(239, 234, 226, 0.8);
+    backdrop-filter: blur(80px);
+    padding: 3rem;
+    .modal-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid transparent;
+        .modal-title {
+            width: 100%;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+    }
+    .modal-body {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    .modal-footer {
+        border-top: 1px solid transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .LightBg {
     .form-label {
         font-weight: 500;
