@@ -13,7 +13,7 @@ function TierStatusCard(props) {
         return(
             <Row className={styles.item} key={stakeholder.id}>
                 <Col md={4}>
-                    <StakeholderCard name={stakeholder.name} role={stakeholder.role} profilePicture={StakeholderImage} />    
+                    <StakeholderCard name={stakeholder.firstName + ' ' + stakeholder.lastName} role={stakeholder.role} profilePicture={StakeholderImage} />    
                 </Col>
                 <Col md={2}>
                     <div className={styles.shareContainer}>

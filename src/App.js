@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Switch, useRouteMatch } from 'react-router-dom'
 import Library from './Library'
 import Projects from './pages/Projects'
 import Config from './config.js'
-import ProjectDetailed from './pages/ProjectDetailed';
+import ProjectDetailed from './pages/ProjectDetailed'
+import Simulator from './pages/Simulator'
 
 function App() {
 
@@ -17,12 +18,8 @@ function App() {
         <Route exact path="/projects">
           <Projects data={Config.projects} />
         </Route>
-        <Route exact path="/projectDetailed">
-          <ProjectDetailed data={Config.projects[0]} />
-        </Route>
-        <Route exact path="/projectDetailedActive">
-          <ProjectDetailed data={Config.projects[1]} />
-        </Route>
+        <Route path='/projectDetailed' component={ProjectDetailed} />
+        <Route path='/simulator' component={Simulator} />
       </Switch>
     </BrowserRouter>
   );

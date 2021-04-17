@@ -75,6 +75,11 @@
                 align-items: center;
                 .item {
                     margin-left: 10px;
+                    .publishedData {
+                        font-size: 0.75rem;
+                        font-weight: 400;
+                        color: $GreyDark;
+                    }
                 }
             }
         }

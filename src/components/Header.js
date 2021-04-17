@@ -12,7 +12,7 @@ function Header(props) {
                 <Row>
                     <Col>
                         <Navbar collapseOnSelect expand="lg">
-                            <Navbar.Brand href="#home">
+                            <Navbar.Brand href="/projects">
                             <img
                                 src={Logo}
                                 height="auto"

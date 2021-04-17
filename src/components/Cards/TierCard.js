@@ -16,7 +16,7 @@ function TierCard(props) {
 
     const getStakeholdersOptions = stakeholdersList.map(stakeholder => {
         return (
-            <option value={stakeholder.id}>{stakeholder.firstName + '_' + stakeholder.lastName}</option>
+            <option value={stakeholder.id}>{stakeholder.firstName + ' ' + stakeholder.lastName}</option>
         )
     })
 
@@ -63,7 +63,7 @@ function TierCard(props) {
             setTargetTierRevenue(0)
         } else {
             const targetBeforeTax = parseFloat(((primaryStakeholder.targetRevenue * 100) / primaryStakeholder.share).toFixed(2))
-            setTargetTierRevenue(targetBeforeTax + (targetBeforeTax * 0.03))
+            setTargetTierRevenue((targetBeforeTax + (targetBeforeTax * 0.03)).toFixed(2))
         }
     }
 

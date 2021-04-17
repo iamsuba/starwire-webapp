@@ -9,10 +9,11 @@ import ContractIcon from '../assets/images/contract.svg'
 import TierCard from '../components/Cards/TierCard'
 import TotalStakeholdersRevenueCard from '../components/Cards/TotalStakeholdersRevenueCard';
 import TierStatusCard from '../components/Cards/TierStatusCard';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 function ProjectDetailed(props) {
 
-    const projectData = props.data
+    const projectData = props.location.state.projectData
     const [showContractBuilder, setShowContractBuilder] = useState(false)
 
     const projectPoster = require('../assets/images/projects/'+projectData.poster).default
@@ -30,6 +31,50 @@ function ProjectDetailed(props) {
         )
     })
 
+    const Menu = 
+        projectData.tiers.length == 0 ?
+            <Col md={6} className={styles.buttonsContainer}>
+                <div className={styles.item}>
+                    <ButtonElement variant="primary" label="Save" onClick={() => alert("saving")} />
+                </div>
+                <div className={styles.item}>
+                    <ButtonElement variant="secondary" label="Cancel" onClick={() => createContract()} />
+                </div>
+            </Col> :
+        projectData.status == "draft" ?
+            <Col md={6} className={styles.buttonsContainer}>
+                <div className={styles.item}>
+                    <Link 
+                        style={{ textDecoration: 'none' }} 
+                        to={{
+                            pathname: "/simulator",
+                            state: { projectData: projectData }
+                        }}>
+                        <ButtonElement variant="blue" label="Simulate" />
+                    </Link>
+                </div>
+                <div className={styles.item}>
+                    <ButtonElement variant="secondary" label="Edit" onClick={() => createContract()} />
+                </div>
+                <div className={styles.item}>
+                    <ButtonElement variant="primary" label="Publish to Blockchain" onClick={() => alert("saving")} />
+                </div>
+            </Col> :
+            <Col md={6} className={styles.buttonsContainer}>
+                <div className={styles.item}>
+                    <div className={styles.publishedData}>contract published at <a href="https://www.etherscan.com" target="_blank" className={styles.address}>0x8hd...3eI</a></div>
+                </div>
+                <div className={styles.item}>
+                    <Link  
+                        style={{ textDecoration: 'none' }} 
+                        to={{
+                            pathname: "/simulator",
+                            state: { projectData: projectData }
+                        }}>
+                        <ButtonElement variant="blue" label="Simulate" />
+                    </Link>
+                </div>
+        </Col>
     const ContractBuilderEmptyMessage =
         <div className={styles.emptyMessageContainer}>
             <Image src={ContractIcon} height="96px" width="96px" />
@@ -45,14 +90,7 @@ function ProjectDetailed(props) {
                     <img src={ContractIcon} width="48px" />
                     <div className={styles.title}>Financial Contract Builder</div>
                 </Col>
-                <Col md={6} className={styles.buttonsContainer}>
-                    <div className={styles.item}>
-                        <ButtonElement variant="primary" label="Save" onClick={() => alert("saving")} />
-                    </div>
-                    <div className={styles.item}>
-                        <ButtonElement variant="secondary" label="Cancel" onClick={() => createContract()} />
-                    </div>
-                </Col>
+                {Menu}
             </Row>
             <div className={styles.tiersContainer}>
                 <div className={styles.item}>
@@ -77,20 +115,10 @@ function ProjectDetailed(props) {
                     <img src={ContractIcon} width="48px" />
                     <div className={styles.title}>Financial Contract Builder</div>
                 </Col>
-                <Col md={6} className={styles.buttonsContainer}>
-                <div className={styles.item}>
-                        <ButtonElement variant="blue" label="Simulate" onClick={() => alert("saving")} />
-                    </div>
-                    <div className={styles.item}>
-                        <ButtonElement variant="secondary" label="Edit" onClick={() => createContract()} />
-                    </div>
-                    <div className={styles.item}>
-                        <ButtonElement variant="primary" label="Publish to Blockchain" onClick={() => alert("saving")} />
-                    </div>
-                </Col>
+                {Menu}
             </Row>
             <div className={styles.item}>
-                <TotalStakeholdersRevenueCard data={props.data} />
+                <TotalStakeholdersRevenueCard data={projectData} />
             </div>
             {TierStatus}
         </div>
@@ -125,7 +153,7 @@ function ProjectDetailed(props) {
                 </div>
                 <div className={styles.contractContainer}>
                     {
-                        projectData.status == "Generating Revenue" ? Contracts :
+                        projectData.tiers.length > 0 ? Contracts :
                         showContractBuilder ? ContractBuilder : ContractBuilderEmptyMessage
                     }
                 </div>

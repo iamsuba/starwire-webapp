@@ -18,7 +18,8 @@ function Projects(props) {
                     style={{ textDecoration: 'none' }} 
                     to={{
                         pathname: "/projectDetailed",
-                        search: "?id="+project.id
+                        search: "?id="+project.id,
+                        state: { projectData: project }
                       }}>
                     <ProjectOverviewCard 
                             title={project.name}

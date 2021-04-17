@@ -1,0 +1,50 @@
+@import '../variables.scss';
+
+.simulatorContainer {
+    .header {
+        padding: 2rem 0rem;
+        .titleContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            .info{
+                margin-left: 20px;
+                .title {
+                    font-size: 1rem;
+                    color: $Black;
+                    font-weight: 700;
+                }
+                .desc {
+                    font-size: 0.85rem;
+                    font-weight: 400;
+                    color: $GreyDark;
+                }
+            }
+        }
+        .buttonsContainer {
+            text-align: right;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            .item {
+                margin-left: 10px;
+            }
+        }
+        .rangeContainer {
+            min-width: 100%;
+        }
+    }
+    .contractsContainer {
+        margin-bottom: 5rem;
+        .item {
+            margin-top: 2rem;
+        }
+    }
+    .chartContainer {
+        rect {
+            stroke: none;
+        }
+    }
+}

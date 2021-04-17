@@ -42,15 +42,164 @@ const projects = [
                     "active": false,
                     "share": 0
                 }
-            ]
+            ],
+            "tiers": []
             
         },
         {
             "id": 2,
             "name": "The Big Year",
             "desc": "After graduating from Emory University, top student and athlete Christopher McCandless abandons his possessions, gives his entire $24,000 savings account to charity and hitchhikes to Alaska to live in the wilderness. Along the way, Christopher encounters a series of characters that shape his life.",
-            "status": "Generating Revenue",
+            "status": "draft",
             "poster": "thebigyear.png",
+            "totalTargetRevenue": 400000,
+            "totalReceivedRevenue": 0,
+            "stakeholders": [
+                {
+                    "id": 1,
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "role": "owner",
+                    "profilePicture": "john.png",
+                    "active": true,
+                    "share": 25,
+                    "totalTargetRevenue": 100000,
+                    "totalReceivedRevenue": 0
+                },
+                {
+                    "id": 2,
+                    "firstName": "Emile",
+                    "lastName": "Hirsch",
+                    "role": "distributor",
+                    "profilePicture": "emile.png",
+                    "active": true,
+                    "share": 35,
+                    "totalTargetRevenue": 100000,
+                    "totalReceivedRevenue": 0
+                },
+                {
+                    "id": 3,
+                    "firstName": "Catherine",
+                    "lastName": "Keener",
+                    "role": "Investor",
+                    "profilePicture": "catherine.png",
+                    "active": false,
+                    "share": 0,
+                    "totalTargetRevenue": 0,
+                    "totalReceivedRevenue": 0
+                },
+                {
+                    "id": 4,
+                    "firstName": "Vince",
+                    "lastName": "Vaughn",
+                    "role": "Crew",
+                    "profilePicture": "vince.png",
+                    "active": true,
+                    "share": 40,
+                    "totalTargetRevenue": 100000,
+                    "totalReceivedRevenue": 0
+                }
+            ],
+            "tiers": [
+                {
+                    "id": 1,
+                    "name": "Tier 1",
+                    "targetRevenue": 100000,
+                    "receivedRevenue": 0,
+                    "status": "pending",
+                    "stakeholders": [
+                        {
+                            "id": 1,
+                            "firstName": "John",
+                            "lastName": "Doe",
+                            "role": "owner",
+                            "profilePicture": "john.png",
+                            "share": 25,
+                            "targetRevenue": 100000,
+                            "receivedRevenue": 0
+                        },
+                        {
+                            "id": 2,
+                            "firstName": "Emile",
+                            "lastName": "Hirsch",
+                            "role": "distributor",
+                            "profilePicture": "emile.png",
+                            "active": false,
+                            "share": 75,
+                            "targetRevenue": 100000,
+                            "receivedRevenue": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Tier 2",
+                    "targetRevenue": 200000,
+                    "receivedRevenue": 0,
+                    "status": "pending",
+                    "stakeholders": [
+                        {
+                            "id": 1,
+                            "firstName": "John",
+                            "lastName": "Doe",
+                            "role": "owner",
+                            "profilePicture": "john.png",
+                            "share": 25,
+                            "targetRevenue": 100000,
+                            "receivedRevenue": 0
+                        },
+                        {
+                            "id": 2,
+                            "firstName": "Emile",
+                            "lastName": "Hirsch",
+                            "role": "distributor",
+                            "profilePicture": "emile.png",
+                            "active": false,
+                            "share": 75,
+                            "targetRevenue": 100000,
+                            "receivedRevenue": 0
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Tier 3",
+                    "targetRevenue": 100000,
+                    "receivedRevenue": 0,
+                    "status": "pending",
+                    "stakeholders": [
+                        {
+                            "id": 1,
+                            "firstName": "John",
+                            "lastName": "Doe",
+                            "role": "owner",
+                            "profilePicture": "john.png",
+                            "share": 25,
+                            "targetRevenue": 100000,
+                            "receivedRevenue": 0
+                        },
+                        {
+                            "id": 2,
+                            "firstName": "Emile",
+                            "lastName": "Hirsch",
+                            "role": "distributor",
+                            "profilePicture": "emile.png",
+                            "active": false,
+                            "share": 75,
+                            "targetRevenue": 100000,
+                            "receivedRevenue": 0
+                        }
+                    ]
+                }
+            ]
+            
+        },
+        {
+            "id": 3,
+            "name": "We Bought a Zoo",
+            "desc": "After graduating from Emory University, top student and athlete Christopher McCandless abandons his possessions, gives his entire $24,000 savings account to charity and hitchhikes to Alaska to live in the wilderness. Along the way, Christopher encounters a series of characters that shape his life.",
+            "status": "Generating Revenue",
+            "poster": "weboughtazoo.png",
             "totalTargetRevenue": 400000,
             "totalReceivedRevenu": 200000,
             "stakeholders": [
@@ -162,7 +311,7 @@ const projects = [
                 },
                 {
                     "id": 3,
-                    "name": "Tier 2",
+                    "name": "Tier 3",
                     "targetRevenue": 100000,
                     "receivedRevenue": 0,
                     "status": "pending",
@@ -192,13 +341,6 @@ const projects = [
                 }
             ]
             
-        },
-        {
-            "id": 3,
-            "name": "We Bought a Zoo",
-            "desc": "After graduating from Emory University, top student and athlete Christopher McCandless abandons his possessions, gives his entire $24,000 savings account to charity and hitchhikes to Alaska to live in the wilderness. Along the way, Christopher encounters a series of characters that shape his life.",
-            "status": "Generating Revenue",
-            "poster": "weboughtazoo.png"
         },
         {
             "id": 4,
