@@ -1,0 +1,67 @@
+@import '../variables.scss';
+
+.signInContainer {
+    height: 100vh;
+    background: radial-gradient(67.29% 99.37% at 74.97% 45.57%, #EFEAE2 0%, rgba(239, 234, 226, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .leftContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border-right: 1px solid $BgRegular;
+        padding-right: 3rem;
+        .desc {
+            margin-top: 20px;
+        }
+    }
+    .rightContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $Black;
+        }
+        .title {
+            margin-bottom: 20px;
+        }
+    }
+    .signUp {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        .title {
+            margin-top: 20px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .formContainer {
+            margin-top: 3rem;
+            .label {
+                font-size: 0.75rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .item {
+                margin-top: 2rem;
+            }
+        }
+        .buttonsContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 2rem;
+            .item {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@ import Projects from './pages/Projects'
 import Config from './config.js'
 import ProjectDetailed from './pages/ProjectDetailed'
 import Simulator from './pages/Simulator'
+import SignIn from './pages/SignIn'
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route exact path="/projects">
           <Projects data={Config.projects} />
+        </Route>
+        <Route exact path="/">
+          <SignIn />
         </Route>
         <Route path='/projectDetailed' component={ProjectDetailed} />
         <Route path='/simulator' component={Simulator} />
