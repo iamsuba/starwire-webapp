@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown, Form, FormControl, Container, Row, Col } from 'react-bootstrap';
 import styles from './Header.module.scss'
-import Logo from '../assets/images/logo_grayscale.svg'
+import Logo from '../assets/images/logo.png'
 import ProfilePhoto from '../assets/images/profilephoto.png'
 import ButtonElement from './ButtonElement'
 
@@ -18,6 +18,8 @@ function Header(props) {
                                 height="auto"
                                 className="d-inline-block align-top"
                                 alt="Logo"
+                                height="27px"
+
                             />
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

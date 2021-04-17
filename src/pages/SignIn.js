@@ -3,7 +3,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import styles from './SignIn.module.scss'
 import Footer from '../components/Footer'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import LogoColor from '../assets/images/logo_color.svg'
+import LogoColor from '../assets/images/logo.png'
 import TextInput from '../components/Inputs/TextInput';
 import ButtonElement from '../components/ButtonElement'
 import ImageUploadInput from '../components/Inputs/ImageUploadInput'
@@ -16,7 +16,7 @@ function SignIn(props) {
         <div className={styles.singIn}>
             <Row>
                 <Col md={5} className={styles.leftContainer}>
-                    <Image src={LogoColor} height="20px" />
+                    <Image src={LogoColor} height="40px" />
                     <div className={styles.desc}>Sign or create new account to create and participate in creative projects.</div>
                 </Col>                    
                 <Col md={{ span: 6, offset: 1 }} className={styles.rightContainer}>
@@ -39,7 +39,9 @@ function SignIn(props) {
     
     const SingUpContainer = 
         <div className={styles.signUp}>
-            <Image src={LogoColor} height="25px" />
+            <div>
+                <Image src={LogoColor} height="30px" />
+            </div>
             <div className={styles.title}>Create a new account</div>
             <div className={styles.formContainer}>
                 <Row>
