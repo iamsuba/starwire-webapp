@@ -38,7 +38,7 @@ function Header(props) {
                                         />
                                     </div>
                                     <NavDropdown title="John Doe" className={styles.dropdown} id="collasible-nav-dropdown">
-                                        <NavDropdown.Item href="#profile">My Account</NavDropdown.Item>
+                                        <NavDropdown.Item href="/profile">My Account</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item href="#signout">Signout</NavDropdown.Item>
                                     </NavDropdown>

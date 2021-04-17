@@ -7,6 +7,7 @@ import Config from './config.js'
 import ProjectDetailed from './pages/ProjectDetailed'
 import Simulator from './pages/Simulator'
 import SignIn from './pages/SignIn'
+import Profile from './pages/Profile'
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route exact path="/">
           <SignIn />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
         <Route path='/projectDetailed' component={ProjectDetailed} />
         <Route path='/simulator' component={Simulator} />

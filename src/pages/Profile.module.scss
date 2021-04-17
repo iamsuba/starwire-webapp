@@ -1,0 +1,120 @@
+@import '../variables.scss';
+
+.profilePage {
+    padding: 5rem 0rem;
+    .profileContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .profilePicture {
+            height: 48px;
+            background-size: cover;
+            background-position: center;
+            width: 48px;
+        }
+        .infoContainer {
+            margin-left: 15px;
+            .name {
+                font-size: 1rem;
+                font-weight: 700;
+            }
+            .email {
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+        }
+    }
+    .tilesContainer {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        .tile {
+            background-color: $White;
+            box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            height: 380px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            &:hover {
+                cursor: pointer;
+                box-shadow: none;
+            }
+            .label {
+                font-size: 0.75rem;
+                font-weight: 500;
+                color: $GreyDark;
+            }
+            .value {
+                color: $Red;
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+            .topRow {
+                text-align: right;
+            }
+            .title {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: $Black;
+            }
+            .bottomRow {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                .leftContainer {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    .requestContainer {
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 10px;
+        &.pending {
+            background-color: $White;
+            box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
+        }
+        &:hover {
+            cursor: pointer;
+            box-shadow: none;
+        }
+        .leftContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            .poster {
+                height: 48px;
+                width: 48px;
+                background-size: cover;
+                background-position: center;
+                margin-right: 10px;
+            }
+            .title {
+                font-size: 1rem;
+                font-weight: 600;
+                color: $Black;
+            }
+        }
+        .rightContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            .label {
+                font-size: 0.75rem;
+                font-weight: 400;
+                color: $GreyDark;
+                margin-right: 10px;
+            }
+        } 
+    }
+}

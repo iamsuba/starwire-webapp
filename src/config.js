@@ -379,6 +379,34 @@ const projects = [
         }
     ]
 
+    const requests = [
+        {
+            projectId: 1,
+            status: 'pending'
+        },
+        {
+            projectId: 2,
+            status: 'pending'
+        },
+        {
+            projectId: 3,
+            status: 'pending'
+        },
+        {
+            projectId: 4,
+            status: 'accepted'
+        },
+        {
+            projectId: 5,
+            status: 'accepted'
+        },
+        {
+            projectId: 6,
+            status: 'accepted'
+        }
+    ]
+
     export default {
-        projects: projects
+        projects: projects,
+        requests: requests
     }
